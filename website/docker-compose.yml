@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  php:
+    build: .
+    volumes:
+       - ./:/var/www/html
+       - /var/log/apache2/site:/var/log/apache2
+    ports:
+       - '8010:80'
+    environment:
+       - VIRTUAL_HOST=localhost
